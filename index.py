@@ -38,18 +38,6 @@ while a==True:
         time.sleep(0.2)
         if(timez<int(time.time())):
             a = False
-            val = driver.current_url
-            val = val.replace("https://glitch.com/edit/#!/", "")
-            val = val.replace("?path=README.md%3A1%3A0", "")
-            val = "https://"+val+".glitch.me/"
-            print(val)
-            payload = "test="+val
-            headers = {
-                'cache-control': "no-cache",
-                'content-type': "application/x-www-form-urlencoded"
-                }
-            response = requests.request("POST", "https://RealFoolhardyAddin.idotmastera.repl.co/rawr", data=payload, headers=headers)
-            print(response)
             driver.close()
 
 
