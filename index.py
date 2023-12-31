@@ -2,6 +2,7 @@ import undetected_chromedriver as uc
 from selenium.webdriver import Chrome
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 import random
 import json
@@ -36,7 +37,7 @@ a = True
 driver.get('https://youtu.be/U3oEvGpHRz8')
 time.sleep(30)
 
-element = driver.find_element_by_xpath('/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div[2]/div/div/ytd-player/div/div/div[30]/div[2]/div[1]/button')
+element = driver.find_element(By.xpath("/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div[2]/div/div/ytd-player/div/div/div[30]/div[2]/div[1]/button"))
 element.click()
 
 time.sleep(30)
