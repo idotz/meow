@@ -7,6 +7,8 @@ import random
 import json
 import os
 import requests
+import pyautogui
+from PIL import Image
 
 # with open("proxy.txt") as f:
 #     lines = f.readlines()
