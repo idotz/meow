@@ -34,7 +34,7 @@ timez = int(time.time())+30
 print("rawr")
 a = True
 driver.get('https://example.com/')
-
+time.sleep(30)
 screenshot = pyautogui.screenshot()
 screenshot.save("screenshot.png")
 
