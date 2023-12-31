@@ -35,8 +35,17 @@ print("rawr")
 a = True
 driver.get('https://youtu.be/U3oEvGpHRz8')
 time.sleep(30)
+
+element = driver.find_element_by_xpath('/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div[2]/div/div/ytd-player/div/div/div[30]/div[2]/div[1]/button')
+element.click()
+
+time.sleep(30)
+
 screenshot = pyautogui.screenshot()
 screenshot.save("screenshot.png")
+
+
+
 
 # Send screenshot to Discord webhook
 with open("screenshot.png", "rb") as img:
