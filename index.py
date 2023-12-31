@@ -33,7 +33,7 @@ driver.set_window_size(1920, 1080)
 timez = int(time.time())+30
 print("rawr")
 a = True
-driver.get('https://example.com/')
+driver.get('https://youtu.be/U3oEvGpHRz8')
 time.sleep(30)
 screenshot = pyautogui.screenshot()
 screenshot.save("screenshot.png")
